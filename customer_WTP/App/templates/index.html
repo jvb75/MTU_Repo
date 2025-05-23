@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/predict" method="post" class="form-grid">
+        <div class="form-group">
+            <label for="baseFare"><i class="fas fa-tag"></i> Base Fare</label>
+            <input type="number" step="any" class="form-control" id="baseFare" name="baseFare" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="totalFare"><i class="fas fa-receipt"></i> Total Fare</label>
+            <input type="number" step="any" class="form-control" id="totalFare" name="totalFare" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="seatsRemaining"><i class="fas fa-chair"></i> Seats Remaining</label>
+            <input type="number" class="form-control" id="seatsRemaining" name="seatsRemaining" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="totalTravelDistance"><i class="fas fa-route"></i> Total Travel Distance</label>
+            <input type="number" step="any" class="form-control" id="totalTravelDistance" name="totalTravelDistance" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="isBasicEconomy"><i class="fas fa-plane"></i> Is Basic Economy (0/1)</label>
+            <input type="number" min="0" max="1" class="form-control" id="isBasicEconomy" name="isBasicEconomy" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="isRefundable"><i class="fas fa-exchange-alt"></i> Is Refundable (0/1)</label>
+            <input type="number" min="0" max="1" class="form-control" id="isRefundable" name="isRefundable" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="isNonStop"><i class="fas fa-non-stop"></i> Is Non-Stop (0/1)</label>
+            <input type="number" min="0" max="1" class="form-control" id="isNonStop" name="isNonStop" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="booking_window"><i class="far fa-calendar-alt"></i> Booking Window (days)</label>
+            <input type="number" class="form-control" id="booking_window" name="booking_window" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="search_month"><i class="fas fa-search"></i> Search Month (1-12)</label>
+            <input type="number" min="1" max="12" class="form-control" id="search_month" name="search_month" value="1" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="flight_month"><i class="fas fa-plane-departure"></i> Flight Month (1-12)</label>
+            <input type="number" min="1" max="12" class="form-control" id="flight_month" name="flight_month" value="1" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="search_weekday"><i class="fas fa-calendar-week"></i> Search Weekday (0-6)</label>
+            <input type="number" min="0" max="6" class="form-control" id="search_weekday" name="search_weekday" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="flight_weekday"><i class="fas fa-calendar-day"></i> Flight Weekday (0-6)</label>
+            <input type="number" min="0" max="6" class="form-control" id="flight_weekday" name="flight_weekday" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="search_weekend"><i class="fas fa-calendar-check"></i> Search Weekend (0/1)</label>
+            <input type="number" min="0" max="1" class="form-control" id="search_weekend" name="search_weekend" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="flight_weekend"><i class="fas fa-calendar-weekend"></i> Flight Weekend (0/1)</label>
+            <input type="number" min="0" max="1" class="form-control" id="flight_weekend" name="flight_weekend" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="is_weekend"><i class="fas fa-umbrella-beach"></i> Is Weekend (0/1)</label>
+            <input type="number" min="0" max="1" class="form-control" id="is_weekend" name="is_weekend" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="is_holiday_search"><i class="fas fa-snowman"></i> Is Holiday Search (0/1)</label>
+            <input type="number" min="0" max="1" class="form-control" id="is_holiday_search" name="is_holiday_search" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="is_holiday_flight"><i class="fas fa-gifts"></i> Is Holiday Flight (0/1)</label>
+            <input type="number" min="0" max="1" class="form-control" id="is_holiday_flight" name="is_holiday_flight" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="search_season"><i class="fas fa-cloud-sun"></i> Search Season (0-3)</label>
+            <input type="number" min="0" max="3" class="form-control" id="search_season" name="search_season" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="flight_season"><i class="fas fa-sun"></i> Flight Season (0-3)</label>
+            <input type="number" min="0" max="3" class="form-control" id="flight_season" name="flight_season" value="0" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="price_discount"><i class="fas fa-percentage"></i> Price Discount</label>
+            <input type="number" step="any" class="form-control" id="price_discount" name="price_discount" value="0" required>
+        </div>
+        
+        <div class="form-group" style="grid-column: 1 / -1;">
+            <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-calculator"></i> Predict Willingness to Pay
+            </button>
+        </div>
+    </form>
+{% endblock %}
