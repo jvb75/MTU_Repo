@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+    <div class="result-card">
+        <h2><i class="fas fa-chart-pie"></i> Prediction Result</h2>
+        <div class="result-value">{{ "%.4f"|format(prediction) }}</div>
+        
+        <div class="interpretation">
+            <h3><i class="fas fa-lightbulb"></i> Interpretation</h3>
+            <p>This value represents the customer's willingness to pay relative to the base price.</p>
+            
+            <div style="margin-top: 15px; display: flex; align-items: center;">
+                <div style="flex: 1; text-align: center;">
+                    <div style="font-size: 24px; color: var(--danger-color);">
+                        <i class="fas fa-arrow-down"></i> Below 1.0
+                    </div>
+                    <p>Price sensitive customers</p>
+                </div>
+                
+                <div style="flex: 1; text-align: center;">
+                    <div style="font-size: 24px; color: var(--success-color);">
+                        <i class="fas fa-arrow-up"></i> Above 1.0
+                    </div>
+                    <p>Willing to pay premium</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="/" class="btn btn-primary">
+        <i class="fas fa-redo"></i> Make Another Prediction
+    </a>
+{% endblock %}
